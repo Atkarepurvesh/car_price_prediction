@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Car Price Prediction</h1>
+            <p class="tagline">Estimate the price of your dream car!</p>
+        </header>
+
+        <section id="prediction-form">
+            <h2>Predict Car Price</h2>
+            {% if model_available %}
+            <form id="predictForm">
+                <div class="input-group">
+                    <label for="annual_salary">Annual Salary:</label>
+                    <input type="number" id="annual_salary" name="annual_salary" placeholder="e.g., 60000" value="40000" required>
+                </div>
+                <div class="input-group">
+                    <label for="credit_card_debt">Credit Card Debt:</label>
+                    <input type="number" id="credit_card_debt" name="credit_card_debt" placeholder="e.g., 5000" required>
+                </div>
+                <div class="input-group">
+                    <label for="net_worth">Net Worth:</label>
+                    <input type="number" id="net_worth" name="net_worth" placeholder="e.g., 200000" required>
+                </div>
+                <div class="input-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" placeholder="e.g., 30" required>
+                </div>
+                <button type="button" class="predict-button" onclick="predictPrice()">Predict</button>
+            </form>
+            <div id="prediction-result" class="result-message"></div>
+            {% else %}
+            <p class="error-message">Pre-trained model not found. Please train the model.</p>
+            {% endif %}
+        </section>
+
+        <section id="training-section">
+            <h2>Train Model</h2>
+            {% if data_available %}
+            <button type="button" class="train-button" onclick="trainModel()">Train Model</button>
+            <div id="training-status" class="status-message"></div>
+            {% else %}
+            <p class="error-message">Training data (car_purchasing.csv) not found.</p>
+            {% endif %}
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Car Price Prediction</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
