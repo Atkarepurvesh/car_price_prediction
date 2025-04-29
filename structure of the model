@@ -1,0 +1,40 @@
+📁 car-sales-forecast/ — Main Project Folder
+📁 data/
+Purpose: Stores raw input data or CSV files used for training or analysis.
+
+car_purchasing.csv: A dataset likely containing car purchase-related data (e.g., price, model, year, buyer info, etc.).
+
+📁 model/
+Purpose: Stores trained machine learning models or related artifacts.
+
+sales_forecast_model.pkl: A serialized model file (probably saved using pickle or joblib) used to predict sales.
+
+📁 static/
+Purpose: Stores static assets used by a web app.
+
+script.js: JavaScript code for interactivity on the frontend.
+
+style.css: CSS stylesheet for styling the web interface.
+
+📁 templates/
+Purpose: Stores HTML templates used by Flask or another web framework.
+
+index.html: Likely the main frontend page of the web app. Flask will render this as the homepage.
+
+📄 app.py
+There are two of them (likely one is a duplicate or misnamed). Purpose: Main Python script to run the web app — usually contains Flask code for routing and serving pages.
+
+📄 requirements.txt
+Purpose: Lists all Python dependencies required to run the project (used with pip install -r requirements.txt).
+
+📄 train_model.py
+Purpose: Script for training your ML model — it probably reads from the CSV and outputs the .pkl file.
+
+📄 .gitignore
+Purpose: Tells Git which files/folders to ignore (e.g., .pkl, __pycache__, etc.).
+
+📄 car_price_model.pkl
+Another serialized model file — possibly a different model focused on predicting car prices.
+
+📄 car_purchasing.csv (again)
+This appears to be a duplicate of the CSV file in /data. You might want to remove one to avoid confusion.
